@@ -15,9 +15,6 @@ import test_task.com.repository.TeamRepository;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-
-import java.sql.Date;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service

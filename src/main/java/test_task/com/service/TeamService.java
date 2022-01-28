@@ -6,18 +6,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import test_task.com.dto.PlayerRequest;
 import test_task.com.dto.TeamRequest;
 import test_task.com.dto.TeamResponse;
-import test_task.com.dto.TeamResponse;
-import test_task.com.model.Player;
 import test_task.com.model.Team;
 import test_task.com.repository.PlayerRepository;
 import test_task.com.repository.TeamRepository;
 
 import java.util.List;
-import java.util.concurrent.ConcurrentSkipListSet;
-import java.util.stream.Collectors;
 
 @Service
 @Slf4j
