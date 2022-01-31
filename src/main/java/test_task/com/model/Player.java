@@ -2,11 +2,14 @@ package test_task.com.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonView;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import lombok.Data;
+import org.springframework.web.servlet.View;
 import test_task.com.service.LocalDateSerializer;
+import test_task.com.service.TeamSerializer;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -36,7 +39,7 @@ public class Player {
     @Column(name="start_career", nullable = false)
     LocalDate startCareer;
 
-    @JsonIgnore
+    @JsonSerialize(using = TeamSerializer.class)
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "team_id")
     private Team team;

@@ -125,7 +125,7 @@ public class PlayerService {
             teamRepository.save(currentTeam);
             teamRepository.save(nextTeam);
             playerRepository.save(player);
-            return new ResponseEntity<>(new PlayerResponse(true, "The transfer is carried out", player), HttpStatus.OK);
+            return new ResponseEntity<>(new PlayerResponse(true, "The transfer is carried out. The price was " + costWithCommission, player), HttpStatus.OK);
         }catch (Exception ex){
             log.error(ex.getMessage());
             return new ResponseEntity<>(new PlayerResponse(false, "Can't transfer player: "+ex.getMessage(), null), HttpStatus.OK);
