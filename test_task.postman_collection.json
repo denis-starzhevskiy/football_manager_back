@@ -1,0 +1,457 @@
+{
+	"info": {
+		"_postman_id": "6d31519c-fc25-42b0-a779-997bde671751",
+		"name": "test_task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/player/transfer/?playerId=2&teamId=1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/player/transfer/?playerId=2&teamId=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"player",
+						"transfer",
+						""
+					],
+					"query": [
+						{
+							"key": "playerId",
+							"value": "2"
+						},
+						{
+							"key": "teamId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:8080/api/player/transfer/?playerId=2&teamId=2",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/player/transfer/?playerId=2&teamId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"player",
+								"transfer",
+								""
+							],
+							"query": [
+								{
+									"key": "playerId",
+									"value": "2"
+								},
+								{
+									"key": "teamId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 31 Jan 2022 10:28:36 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"The transfer is carried out. The price was 681078\",\n    \"player\": {\n        \"playerId\": 2,\n        \"name\": \"Cristiano\",\n        \"lastName\": \"Ronaldo\",\n        \"birthday\": \"1985-01-27\",\n        \"startCareer\": \"2002-01-27\",\n        \"team\": \"2\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8080/api/team/all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/team/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"team",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:8080/api/team/all",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/team/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"team",
+								"all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 31 Jan 2022 10:09:49 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"teamID\": 3,\n        \"name\": \"Demo\",\n        \"country\": \"Ukraine\",\n        \"town\": \"Lviv\",\n        \"commission\": 5,\n        \"budget\": 10000000,\n        \"players\": []\n    },\n    {\n        \"teamID\": 1,\n        \"name\": \"Strength\",\n        \"country\": \"Ukraine\",\n        \"town\": \"Lviv\",\n        \"commission\": 5,\n        \"budget\": 9260548,\n        \"players\": [\n            {\n                \"playerId\": 2,\n                \"name\": \"Cristiano\",\n                \"lastName\": \"Ronaldo\",\n                \"birthday\": \"1985-01-27\",\n                \"startCareer\": \"2002-01-27\"\n            },\n            {\n                \"playerId\": 1,\n                \"name\": \"Lionel\",\n                \"lastName\": \"Messi\",\n                \"birthday\": \"1998-01-27\",\n                \"startCareer\": \"2004-01-27\"\n            }\n        ]\n    },\n    {\n        \"teamID\": 2,\n        \"name\": \"Health\",\n        \"country\": \"USA\",\n        \"town\": \"Hawaii\",\n        \"commission\": 8,\n        \"budget\": 15739452,\n        \"players\": [\n            {\n                \"playerId\": 3,\n                \"name\": \"Mesut\",\n                \"lastName\": \"Ozil\",\n                \"birthday\": \"1987-01-27\",\n                \"startCareer\": \"2008-01-27\"\n            },\n            {\n                \"playerId\": 22,\n                \"name\": \"Cristiano\",\n                \"lastName\": \"Ronaldo\",\n                \"birthday\": \"1985-01-27\",\n                \"startCareer\": \"2002-01-27\"\n            },\n            {\n                \"playerId\": 4,\n                \"name\": \"Eden\",\n                \"lastName\": \"Hazard\",\n                \"birthday\": \"1983-01-27\",\n                \"startCareer\": \"2007-01-27\"\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8080/api/player/all",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/player/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"player",
+						"all"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:8080/api/player/all",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/player/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"player",
+								"all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 31 Jan 2022 10:34:11 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"playerId\": 3,\n        \"name\": \"Mesut\",\n        \"lastName\": \"Ozil\",\n        \"birthday\": \"1987-01-27\",\n        \"startCareer\": \"2008-01-27\",\n        \"team\": \"2\"\n    },\n    {\n        \"playerId\": 4,\n        \"name\": \"Eden\",\n        \"lastName\": \"Hazard\",\n        \"birthday\": \"1983-01-27\",\n        \"startCareer\": \"2007-01-27\",\n        \"team\": \"2\"\n    },\n    {\n        \"playerId\": 1,\n        \"name\": \"Lionel\",\n        \"lastName\": \"Messi\",\n        \"birthday\": \"1998-01-27\",\n        \"startCareer\": \"2004-01-27\",\n        \"team\": \"1\"\n    },\n    {\n        \"playerId\": 22,\n        \"name\": \"Cristiano\",\n        \"lastName\": \"Ronaldo\",\n        \"birthday\": \"1985-01-27\",\n        \"startCareer\": \"2002-01-27\",\n        \"team\": \"2\"\n    },\n    {\n        \"playerId\": 2,\n        \"name\": \"Cristiano\",\n        \"lastName\": \"Ronaldo\",\n        \"birthday\": \"1985-01-27\",\n        \"startCareer\": \"2002-01-27\",\n        \"team\": \"2\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8080/api/player/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/player/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"player",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:8080/api/player/1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/player/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"player",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 31 Jan 2022 10:25:22 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true,\n    \"message\": \"The player was found\",\n    \"player\": {\n        \"playerId\": 1,\n        \"name\": \"Lionel\",\n        \"lastName\": \"Messi\",\n        \"birthday\": \"1998-01-27\",\n        \"startCareer\": \"2004-01-27\",\n        \"team\": \"1\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8080/api/team/all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/team/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"team",
+						"all"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:8080/api/team/all",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/team/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"team",
+								"all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 31 Jan 2022 10:25:52 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"teamID\": 3,\n        \"name\": \"Demo\",\n        \"country\": \"Ukraine\",\n        \"town\": \"Lviv\",\n        \"commission\": 5,\n        \"budget\": 10000000,\n        \"players\": []\n    },\n    {\n        \"teamID\": 1,\n        \"name\": \"Strength\",\n        \"country\": \"Ukraine\",\n        \"town\": \"Lviv\",\n        \"commission\": 5,\n        \"budget\": 9260548,\n        \"players\": [\n            {\n                \"playerId\": 2,\n                \"name\": \"Cristiano\",\n                \"lastName\": \"Ronaldo\",\n                \"birthday\": \"1985-01-27\",\n                \"startCareer\": \"2002-01-27\",\n                \"team\": \"1\"\n            },\n            {\n                \"playerId\": 1,\n                \"name\": \"Lionel\",\n                \"lastName\": \"Messi\",\n                \"birthday\": \"1998-01-27\",\n                \"startCareer\": \"2004-01-27\",\n                \"team\": \"1\"\n            }\n        ]\n    },\n    {\n        \"teamID\": 2,\n        \"name\": \"Health\",\n        \"country\": \"USA\",\n        \"town\": \"Hawaii\",\n        \"commission\": 8,\n        \"budget\": 15739452,\n        \"players\": [\n            {\n                \"playerId\": 3,\n                \"name\": \"Mesut\",\n                \"lastName\": \"Ozil\",\n                \"birthday\": \"1987-01-27\",\n                \"startCareer\": \"2008-01-27\",\n                \"team\": \"2\"\n            },\n            {\n                \"playerId\": 22,\n                \"name\": \"Cristiano\",\n                \"lastName\": \"Ronaldo\",\n                \"birthday\": \"1985-01-27\",\n                \"startCareer\": \"2002-01-27\",\n                \"team\": \"2\"\n            },\n            {\n                \"playerId\": 4,\n                \"name\": \"Eden\",\n                \"lastName\": \"Hazard\",\n                \"birthday\": \"1983-01-27\",\n                \"startCareer\": \"2007-01-27\",\n                \"team\": \"2\"\n            }\n        ]\n    }\n]"
+				}
+			]
+		}
+	]
+}
