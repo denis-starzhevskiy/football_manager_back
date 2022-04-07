@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import test_task.com.configuration.exceptions.TransferException;
 import test_task.com.dto.PlayerRequest;
 import test_task.com.dto.PlayerResponse;
 import test_task.com.model.Player;
@@ -105,7 +106,7 @@ public class PlayerService {
         }
     }
 
-    @Transactional
+    @Transactional(rollbackFor = TransferException.class)
     public ResponseEntity<PlayerResponse> transfer(Long playerId, Long teamId) {
         try{
             Player player = playerRepository.findById(playerId).orElseThrow(()->new NullPointerException("Can't found the player"));
@@ -115,17 +116,24 @@ public class PlayerService {
             long cost = (ChronoUnit.MONTHS.between(player.getStartCareer(), LocalDate.now()) * 100000) / ChronoUnit.YEARS.between(player.getBirthday(), LocalDate.now());
 
             long costWithCommission = cost + (cost / 100 * currentTeam.getCommission());
-            System.out.println(costWithCommission);
 
-            nextTeam.setBudget((int) (nextTeam.getBudget() - costWithCommission));
-            currentTeam.setBudget((int) (currentTeam.getBudget() + costWithCommission));
+            try {
+                if (nextTeam.getBudget() < costWithCommission) {
+                    throw new TransferException("Not enough money");
+                } else {
+                    nextTeam.setBudget((int) (nextTeam.getBudget() - costWithCommission));
+                    currentTeam.setBudget((int) (currentTeam.getBudget() + costWithCommission));
+                    player.setTeam(nextTeam);
+                    teamRepository.save(nextTeam);
+                    teamRepository.save(currentTeam);
+                    playerRepository.save(player);
+                    return new ResponseEntity<>(new PlayerResponse(true, "The transfer is carried out. The price was " + costWithCommission, player), HttpStatus.OK);
+                }
+            }catch (TransferException ex){
+                log.error(ex.getMessage());
+                return new ResponseEntity<>(new PlayerResponse(false, ex.getMessage(), null), HttpStatus.OK);
+            }
 
-            player.setTeam(nextTeam);
-
-            teamRepository.save(currentTeam);
-            teamRepository.save(nextTeam);
-            playerRepository.save(player);
-            return new ResponseEntity<>(new PlayerResponse(true, "The transfer is carried out. The price was " + costWithCommission, player), HttpStatus.OK);
         }catch (Exception ex){
             log.error(ex.getMessage());
             return new ResponseEntity<>(new PlayerResponse(false, "Can't transfer player: "+ex.getMessage(), null), HttpStatus.OK);

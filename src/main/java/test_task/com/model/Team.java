@@ -37,4 +37,14 @@ public class Team {
     @OneToMany(mappedBy = "team", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Player> players;
 
+    public Team() {
+    }
+
+    public Team(String name, String country, String town, Byte commission, Integer budget) {
+        this.name = name;
+        this.country = country;
+        this.town = town;
+        this.commission = commission;
+        this.budget = budget;
+    }
 }

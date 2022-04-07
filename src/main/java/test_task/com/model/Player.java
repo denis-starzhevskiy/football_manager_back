@@ -22,7 +22,7 @@ public class Player {
 
     @Id
     @Column(name = "player_id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long playerId;
 
     @Column(nullable = false)
@@ -44,4 +44,14 @@ public class Player {
     @JoinColumn(name = "team_id")
     private Team team;
 
+    public Player() {
+    }
+
+    public Player(String name, String lastName, LocalDate birthday, LocalDate startCareer, Team team) {
+        this.name = name;
+        this.lastName = lastName;
+        this.birthday = birthday;
+        this.startCareer = startCareer;
+        this.team = team;
+    }
 }

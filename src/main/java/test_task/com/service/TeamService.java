@@ -21,9 +21,6 @@ public class TeamService {
     @Autowired
     private TeamRepository teamRepository;
 
-    @Autowired
-    private PlayerRepository playerRepository;
-
     @Transactional
     public ResponseEntity<TeamResponse> getTeamById(Long id) {
         try {

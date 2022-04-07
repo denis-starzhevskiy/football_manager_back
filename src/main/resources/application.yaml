@@ -9,9 +9,9 @@ spring:
   jpa:
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQL10Dialect
-#    show-sql: true
-#    hibernate:
-#      ddl-auto: create
+    show-sql: true
+    hibernate:
+      ddl-auto: create
 
   #  various colors of logging
   output:
