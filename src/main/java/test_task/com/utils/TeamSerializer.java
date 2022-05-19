@@ -1,4 +1,4 @@
-package test_task.com.service;
+package test_task.com.utils;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.SerializerProvider;

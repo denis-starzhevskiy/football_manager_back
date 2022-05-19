@@ -8,8 +8,7 @@ import org.springframework.context.ApplicationContext;
 public class Runner {
 
     public static void main(String[] args) {
-        ApplicationContext context =
-                SpringApplication.run(Runner.class);
+        SpringApplication.run(Runner.class);
     }
 
 }

@@ -1,4 +1,4 @@
-package test_task.com.service;
+package test_task.com.utils;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -18,7 +18,7 @@ public class LocalDateSerializer extends StdSerializer<LocalDate> {
     }
 
     @Override
-    public void serialize(LocalDate value, JsonGenerator gen, SerializerProvider sp) throws IOException, JsonProcessingException, IOException {
+    public void serialize(LocalDate value, JsonGenerator gen, SerializerProvider sp) throws IOException {
         gen.writeString(value.format(DateTimeFormatter.ISO_LOCAL_DATE));
     }
 }

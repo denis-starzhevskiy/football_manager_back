@@ -19,11 +19,11 @@ public class PlayerServiceTest {
 
     @Test
     public void transfer() {
-        int budgetTeam1 = Objects.requireNonNull(teamService.getTeamById(1L).getBody()).getTeam().getBudget();
-        int budgetTeam2 = Objects.requireNonNull(teamService.getTeamById(2L).getBody()).getTeam().getBudget();
+        int budgetTeam1 = Objects.requireNonNull(teamService.getTeamById(1L).getBudget());
+        int budgetTeam2 = Objects.requireNonNull(teamService.getTeamById(2L).getBudget());
         playerService.transfer(1L, 1L);
-        int budget1Team1 = Objects.requireNonNull(teamService.getTeamById(1L).getBody()).getTeam().getBudget();
-        int budget1Team2 = Objects.requireNonNull(teamService.getTeamById(2L).getBody()).getTeam().getBudget();
+        int budget1Team1 = Objects.requireNonNull(teamService.getTeamById(1L).getBudget());
+        int budget1Team2 = Objects.requireNonNull(teamService.getTeamById(2L).getBudget());
         System.out.println(budgetTeam2 + " | " + budgetTeam1 + " | " + budget1Team2 + " | " + budget1Team1);
         Assertions.assertEquals(budgetTeam2 + budgetTeam1, budget1Team2 + budget1Team1);
     }

@@ -1,16 +1,34 @@
 package test_task.com.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import test_task.com.model.Player;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 import test_task.com.model.Team;
 
-@Data
-@AllArgsConstructor
-public class TeamResponse {
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import java.util.List;
 
-    boolean status;
-    String message;
-    Team team;
+@Getter
+@Setter
+@NoArgsConstructor
+public class TeamResponse{
+
+    @JsonProperty("id")
+    Long teamID;
+
+    String name;
+
+    String country;
+
+    String town;
+
+    Byte commission;
+
+    Integer budget;
+
+    @JsonProperty("team_players")
+    List<PlayerSlimDto> players;
 
 }

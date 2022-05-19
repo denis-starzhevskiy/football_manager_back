@@ -1,5 +1,4 @@
 spring:
-
   datasource:
     driverClassName: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5775/postgres
@@ -13,12 +12,9 @@ spring:
     hibernate:
       ddl-auto: create
 
-  #  various colors of logging
   output:
     ansi:
       enabled: ALWAYS
-
-cross-origin: http://127.0.0.1:5501
 
 server:
   port: 8080
